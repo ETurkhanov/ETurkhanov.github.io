@@ -1,23 +1,20 @@
-const wrapper = document.querySelector(".wrapper");
-const question = document.querySelector(".question");
-const gif = document.querySelector(".gif");
-const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
+const innerPolygon = document.getElementById("inner-polygon");
+const outer = document.getElementById("outer");
+const closeBtn = document.getElementById("close-btn");
+const message1 = document.getElementById("message-1");
+const message2 = document.getElementById("message-2");
+const heartsRow = document.querySelectorAll(".hearts-row");
+const heartBtn = document.getElementById("heart-btn");
 
-yesBtn.addEventListener("click", () => {
-  question.innerHTML = "До встречи :)";
-  gif.src =
-    "https://media.giphy.com/media/l4Ki4biBSwhjyrS48/giphy.gif";
-});
-
-noBtn.addEventListener("mouseover", () => {
-  const noBtnRect = noBtn.getBoundingClientRect();
-  const maxX = window.innerWidth - noBtnRect.width;
-  const maxY = window.innerHeight - noBtnRect.height;
-
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
-
-  noBtn.style.left = randomX + "px";
-  noBtn.style.top = randomY + "px";
-});
+function toggleEnvelope() {
+  
+  innerPolygon.classList.toggle("inner-open");
+  outer.classList.toggle("outer-open");
+  heartBtn.classList.toggle("hide");
+  closeBtn.classList.toggle("show");
+  message1.classList.toggle("hide");
+  message2.classList.toggle("show");
+  
+  heartsRow.forEach(element => element.classList.toggle("animated"));
+  
+}
