@@ -2,18 +2,6 @@
 <html>
     <head>
         <title>Page Title</title>
-        
-        <!---Written by Alexey Rudenko at Sololearn -->
-        
-        <!--- Updates(3.04.2020):
-             *Difficulty levels reworked.              
-        --->       
-
-        <!--- Updates(2018):
-             *Movement speed increased.
-             *Collisions handling improved.
-             *Deployment of many tanks onto one spot fixed.              
-        --->         
        </head>
     <body>
        <div id="main">
@@ -148,7 +136,7 @@ button {
     </style>
     <script>
     
-    /* Written by Alexey Rudenko at Sololearn playground with some little help from James Long. https://jlongster.com/Making-Sprite-based-Games-with-Canvas  */
+    
 
 
 var w, h, k, xo, yo,
@@ -157,7 +145,7 @@ units = [],
     bullets = [],
     enemies = [],
     explosions = [],
-    dif = [' practice', ' easy', ' medium', ' hard', ' harder', ' hardcore', ' pro', ' deathmatch', ' godlike', ' impossible'],
+    dif = [' practice', ' easy', ' medium', ' hard', 'Общество с Шипачёвой', ' hardcore', 'Гроб от Маргариты Ивановны', ' deathmatch', 'Керел', 'Трёхгранный угол'],
     gameTime = 0,
     isGameOver,
     nextwave = 0,
@@ -429,9 +417,9 @@ var gameOver = function (a)
 
     case 'win':
 
-        alert("Mission completed! Your time is " + _min + ':' + _sec + '\n\nLosses: ' + counter + ' units.\n\nEnemies destroyed: ' + counter2 + '.');
+        alert("Ну хоть где-то ты хорош(а)! Твоё время: " + _min + ':' + _sec + '\n\nПотеряно: ' + counter + ' units.\n\nУничтожено: ' + counter2 + '.');
 
-        var log_item = "<p>Game " + ++gameNum + ": 🏆 Win ⏲" + _min + ':' + _sec + ' /' + dif[lvl] + ' /' + "</p>";
+        var log_item = "<p>Игра " + ++gameNum + ": 🏆 Победа ⏲" + _min + ':' + _sec + ' /' + dif[lvl] + ' /' + "</p>";
         if (lvl < dif.length - 1) lvl++;
         var log = document.getElementById('log');
         log.innerHTML += log_item;
@@ -1436,7 +1424,7 @@ function loader()
         lvl = 0;
     }
 
-    maindiv.innerHTML = '<button id="start" onclick="startGame ()">Start Game</button><button id="info" onclick="inf()">Info</button><br/><span class="dif">Difficulty:</span><br/><button id="btn-left" onclick="changeLvl(0)">&lt</button><span class="dif" >' + dif[lvl] + '  </span><button id="btn-right" onclick="changeLvl (1)" >&gt</button>';
+    maindiv.innerHTML = '<button id="start" onclick="startGame ()">Начать игру</button><button id="info" onclick="inf()">Информация</button><br/><span class="dif">Сложность:</span><br/><button id="btn-left" onclick="changeLvl(0)">&lt</button><span class="dif" >' + dif[lvl] + '  </span><button id="btn-right" onclick="changeLvl (1)" >&gt</button>';
 
     lastTime = Date.now();
 
